@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Détente &amp; Confort — Pompes à chaleur, photovoltaïque &amp; rénovation clé en main · PACA</title>
+<meta name="description" content="Détente &amp; Confort — Léone Morabito installe vos pompes à chaleur et panneaux photovoltaïques et coordonne l'intégralité de votre rénovation en PACA. Un seul interlocuteur, du bilan énergétique à la remise des clés.">
+<meta name="theme-color" content="#FAFAF7">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Détente &amp; Confort — Votre logement, confortable et économe en énergie.">
+<meta property="og:description" content="Pompes à chaleur, photovoltaïque et rénovation clé en main pour logements haut de gamme en PACA. Un seul interlocuteur, du diagnostic à la remise des clés.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ===== TOKENS ===== */
+:root{
+  /* palette signature */
+  --ivoire:#FAFAF7;
+  --emeraude:#1A6B4A;
+  --nuit:#0F1F17;
+  --lin:#F0EDE6;
+  --sauge:#7A9E8A;
+  --or:#C4963A;
+
+  /* dérivés transparents (aucune couleur en dur hors de ce bloc) */
+  --ivoire-97:rgba(250,250,247,.97);
+  --ivoire-70:rgba(250,250,247,.70);
+  --ivoire-40:rgba(250,250,247,.40);
+  --ivoire-12:rgba(250,250,247,.12);
+  --voile-04:rgba(255,255,255,.04);
+  --voile-08:rgba(255,255,255,.08);
+  --em-06:rgba(26,107,74,.06);
+  --em-08:rgba(26,107,74,.08);
+  --em-10:rgba(26,107,74,.10);
+  --em-15:rgba(26,107,74,.15);
+  --em-20:rgba(26,107,74,.20);
+  --nuit-55:rgba(15,31,23,.55);
+  --or-20:rgba(196,150,58,.20);
+  --or-30:rgba(196,150,58,.30);
+
+  /* typo */
+  --display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+
+  /* rythme */
+  --gutter:24px;
+  --maxw:1180px;
+  --section-y:clamp(72px,10vw,128px);
+  --radius:3px;
+  --radius-card:6px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+
+/* ===== RESET ===== */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;
+  background:var(--ivoire);
+  color:var(--nuit);
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4,p,figure,blockquote{margin:0}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--emeraude);outline-offset:3px}
+
+/* ===== PRIMITIVES ===== */
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.section{position:relative;padding:var(--section-y) 0;overflow:hidden}
+.section > .wrap{position:relative;z-index:1}
+.bg-lin{background:var(--lin)}
+.bg-nuit{background:var(--nuit)}
+
+.eyebrow{
+  font-family:var(--sans);font-weight:600;font-size:11px;
+  text-transform:uppercase;letter-spacing:.18em;
+  color:var(--emeraude);margin:0 0 20px;
+}
+.eyebrow--light{color:var(--ivoire-40)}
+
+.h2{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(30px,4.4vw,48px);line-height:1.12;
+  letter-spacing:-.01em;color:var(--nuit);
+}
+.h2 em,.h2--it{font-style:italic;font-weight:400}
+.h2--light{color:var(--ivoire)}
+
+.lede{
+  font-weight:300;font-size:16px;line-height:1.8;color:var(--sauge);
+  max-width:560px;margin-top:18px;
+}
+.center{text-align:center}
+.center .lede{margin-left:auto;margin-right:auto}
+
+.rule-or{width:48px;height:1px;background:var(--or);opacity:.3;border:0;margin:28px auto}
+
+/* boutons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-weight:500;font-size:14px;letter-spacing:.01em;
+  padding:14px 36px;border-radius:var(--radius);border:1px solid transparent;
+  cursor:pointer;transition:background-color .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease),transform .3s var(--ease);
+}
+.btn--primary{background:var(--emeraude);color:var(--ivoire)}
+.btn--primary:hover{background:var(--nuit);transform:translateY(-1px)}
+.btn--ghost{background:transparent;border-color:var(--nuit);color:var(--nuit)}
+.btn--ghost:hover{background:var(--nuit);color:var(--ivoire);transform:translateY(-1px)}
+.btn--sm{padding:10px 22px;font-size:13px}
+.btn--full{width:100%}
+
+/* ===== LIGNES D'ISOTHERMIE (signature) ===== */
+/* Tuile 400x200 : 7 courbes de Bézier horizontales, espacements variables
+   (20/30/45/28/35/22px), amplitude 4-6px, raccords tangents parfaits pour un
+   pavage sans couture. Rendue via <pattern> SVG inline afin que le trait puisse
+   réellement utiliser var(--emeraude) — équivalent d'un background-repeat
+   400px x 200px. */
+.iso-defs{position:absolute;width:0;height:0;overflow:hidden}
+.iso-lines{fill:none;stroke:var(--emeraude);stroke-width:.7;opacity:.04}
+.iso{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.revealed{opacity:1;transform:none}
+
+/* ===== HEADER ===== */
+.header{
+  position:fixed;inset:0 0 auto;z-index:60;
+  background:transparent;border-bottom:1px solid transparent;
+  transition:background-color .4s var(--ease),border-color .4s var(--ease),backdrop-filter .4s var(--ease);
+}
+.header.is-stuck{
+  background:var(--ivoire-97);
+  border-bottom-color:var(--em-10);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+}
+.header__inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+
+.logo{display:inline-flex;align-items:baseline;gap:2px;line-height:1}
+.logo__a{font-family:var(--display);font-weight:600;font-style:italic;font-size:22px;color:var(--nuit)}
+.logo__amp{font-family:var(--sans);font-weight:300;font-size:18px;color:var(--sauge);padding:0 4px}
+.logo__b{font-family:var(--display);font-weight:600;font-size:22px;color:var(--emeraude)}
+
+.nav{display:none;align-items:center;gap:30px}
+.nav a{
+  font-family:var(--sans);font-weight:400;font-size:13px;color:var(--sauge);
+  transition:color .3s var(--ease);
+}
+.nav a:hover,.nav a.is-active{color:var(--emeraude)}
+.header__cta{display:none}
+
+.burger{
+  display:inline-flex;flex-direction:column;justify-content:center;gap:5px;
+  width:40px;height:40px;padding:0 8px;margin-right:-8px;
+  background:none;border:0;cursor:pointer;
+}
+.burger span{display:block;height:1px;background:var(--nuit);transition:transform .35s var(--ease),opacity .25s var(--ease)}
+.burger span:nth-child(1){width:22px}
+.burger span:nth-child(2){width:16px;align-self:flex-end}
+.burger span:nth-child(3){width:22px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* overlay mobile */
+.mnav{
+  position:fixed;inset:0;z-index:55;background:var(--ivoire);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;
+  padding:80px var(--gutter) 40px;
+  opacity:0;visibility:hidden;transform:translateY(-8px);
+  transition:opacity .4s var(--ease),transform .4s var(--ease),visibility .4s;
+}
+.mnav.is-open{opacity:1;visibility:visible;transform:none}
+.mnav a{
+  font-family:var(--display);font-weight:500;font-size:30px;color:var(--nuit);
+  padding:12px 0;transition:color .3s var(--ease);
+}
+.mnav a:hover{color:var(--emeraude)}
+.mnav .btn{margin-top:26px}
+body.is-locked{overflow:hidden}
+
+/* ===== HERO ===== */
+.hero{padding:130px 0 80px;position:relative;overflow:hidden}
+.hero__inner{max-width:760px;margin:0 auto;text-align:center}
+.hero__eyebrow{
+  font-family:var(--sans);font-weight:600;font-size:11px;color:var(--emeraude);
+  text-transform:uppercase;letter-spacing:.2em;line-height:1.7;margin:0 0 24px;
+}
+.hero h1{
+  font-family:var(--display);font-weight:500;color:var(--nuit);
+  font-size:clamp(42px,6vw,72px);line-height:1.02;letter-spacing:-.015em;
+}
+.hero h1 em{display:block;font-style:italic;font-weight:400;color:var(--emeraude)}
+.hero__sub{
+  font-weight:300;font-size:16px;line-height:1.85;color:var(--sauge);
+  max-width:540px;margin:0 auto;
+}
+.hero__ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:36px}
+.hero__tags{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;
+  margin-top:32px;font-size:12px;color:var(--sauge);
+}
+.hero__tags span:not(:last-child)::after{content:'·';margin-left:10px;color:var(--or);opacity:.6}
+
+/* ===== 3 PILIERS ===== */
+.pillars{display:grid;grid-template-columns:1fr;gap:0;margin-top:52px}
+.pillar{padding:36px 0;border-bottom:1px solid var(--em-10)}
+.pillar:last-child{border-bottom:0;padding-bottom:0}
+.pillar:first-child{padding-top:0}
+.pillar__num{
+  font-family:var(--display);font-weight:600;font-size:48px;line-height:1;
+  color:var(--or);opacity:.4;display:block;margin-bottom:14px;
+}
+.pillar h3{font-family:var(--display);font-weight:600;font-size:22px;line-height:1.25;color:var(--nuit)}
+.pillar p{font-weight:300;font-size:14px;line-height:1.8;color:var(--sauge);margin-top:12px}
+.pillar__label{
+  display:block;margin-top:22px;
+  font-family:var(--sans);font-weight:600;font-size:10px;
+  text-transform:uppercase;letter-spacing:.18em;color:var(--emeraude);
+}
+
+/* ===== PROCESSUS ===== */
+.steps{display:grid;grid-template-columns:1fr;gap:0;margin-top:52px}
+.step{position:relative;padding:0 0 34px 42px}
+.step:last-child{padding-bottom:0}
+.step::before{
+  content:'';position:absolute;left:11px;top:44px;bottom:6px;
+  border-left:1px dashed var(--em-20);
+}
+.step:last-child::before{display:none}
+.step__num{
+  font-family:var(--display);font-weight:600;font-size:36px;line-height:1;
+  color:var(--or);position:absolute;left:0;top:-6px;
+}
+.step h3{font-family:var(--sans);font-weight:500;font-size:16px;color:var(--nuit);letter-spacing:.01em}
+.step p{font-weight:300;font-size:14px;line-height:1.8;color:var(--sauge);margin-top:8px}
+
+/* ===== AIDES ===== */
+.aides{display:grid;grid-template-columns:1fr;gap:18px;margin-top:48px}
+.aide{
+  background:var(--ivoire);border-radius:var(--radius-card);
+  border-top:2px solid var(--or);padding:30px 26px;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+}
+.aide:hover{transform:translateY(-3px);box-shadow:0 10px 30px var(--em-06)}
+.aide h3{font-family:var(--display);font-weight:600;font-size:21px;color:var(--nuit)}
+.aide p{font-weight:300;font-size:14px;line-height:1.8;color:var(--sauge);margin-top:10px}
+.aides__note{
+  margin-top:32px;text-align:center;font-style:italic;font-size:13px;color:var(--sauge);
+}
+
+/* ===== POURQUOI (section sombre) ===== */
+.why__title{max-width:720px}
+.why__text{
+  font-weight:300;font-size:16px;line-height:1.9;color:var(--ivoire-70);
+  max-width:600px;margin-top:26px;
+}
+.figures{display:grid;grid-template-columns:1fr;gap:12px;margin-top:52px}
+.figure{
+  background:var(--voile-04);border-radius:var(--radius-card);
+  padding:28px 26px;border:1px solid var(--voile-08);
+}
+.figure__n{
+  font-family:var(--display);font-weight:500;font-size:clamp(38px,5vw,54px);
+  line-height:1;color:var(--or);
+}
+.figure__l{
+  display:block;margin-top:10px;font-weight:300;font-size:13px;line-height:1.7;
+  color:var(--ivoire-70);
+}
+
+/* ===== RÉALISATIONS ===== */
+.gallery{display:grid;grid-template-columns:1fr;gap:6px;margin-top:48px}
+.shot{
+  position:relative;aspect-ratio:4/3;border-radius:4px;overflow:hidden;
+  background:var(--lin);display:flex;align-items:center;justify-content:center;
+  padding:24px;text-align:center;
+}
+.shot__cap{
+  font-family:var(--display);font-style:italic;font-weight:400;font-size:16px;
+  line-height:1.45;color:var(--sauge);transition:opacity .45s var(--ease);
+}
+.shot__over{
+  position:absolute;inset:0;background:var(--nuit-55);
+  display:flex;align-items:center;justify-content:center;padding:24px;
+  opacity:0;transition:opacity .45s var(--ease);
+}
+.shot__over span{
+  font-family:var(--display);font-style:italic;font-weight:400;font-size:17px;
+  line-height:1.45;color:var(--or);text-align:center;
+}
+.shot:hover .shot__over,.shot:focus-within .shot__over{opacity:1}
+.shot:hover .shot__cap{opacity:.25}
+
+/* ===== TÉMOIGNAGES ===== */
+.quotes{display:grid;grid-template-columns:1fr;gap:18px;margin-top:48px}
+.quote{
+  background:var(--ivoire);border-radius:var(--radius-card);
+  border-left:3px solid var(--or);padding:30px 28px;
+  box-shadow:0 4px 20px var(--em-06);
+  display:flex;flex-direction:column;
+}
+.quote p{
+  font-family:var(--display);font-weight:500;font-size:18px;line-height:1.55;
+  color:var(--nuit);flex:1;
+}
+.quote footer{margin-top:22px;padding-top:18px;border-top:1px solid var(--em-10)}
+.quote cite{
+  display:block;font-style:normal;font-weight:500;font-size:13px;color:var(--nuit);
+}
+.quote .stars{
+  display:block;margin-top:6px;font-size:12px;letter-spacing:.22em;color:var(--or);
+}
+
+/* ===== CONTACT ===== */
+.contact__grid{
+  display:grid;grid-template-columns:1fr;gap:44px;
+  max-width:860px;margin:48px auto 0;
+}
+.card-id__name{
+  font-family:var(--sans);font-weight:600;font-size:11px;
+  text-transform:uppercase;letter-spacing:.18em;color:var(--emeraude);
+}
+.card-id__brand{font-family:var(--display);font-style:italic;font-weight:400;font-size:18px;color:var(--nuit);margin-top:8px}
+.card-id p{font-weight:300;font-size:13px;line-height:1.8;color:var(--sauge);margin-top:14px}
+.card-id hr{border:0;height:1px;background:var(--emeraude);opacity:.15;margin:20px 0}
+.card-id a{color:var(--nuit);border-bottom:1px solid var(--em-20);transition:color .3s var(--ease),border-color .3s var(--ease)}
+.card-id a:hover{color:var(--emeraude);border-color:var(--emeraude)}
+
+.form{display:grid;gap:14px}
+.field{display:grid;gap:6px}
+.field label{
+  font-family:var(--sans);font-weight:600;font-size:10px;
+  text-transform:uppercase;letter-spacing:.16em;color:var(--emeraude);
+}
+.field input,.field select,.field textarea{
+  width:100%;font-family:var(--sans);font-weight:300;font-size:14px;
+  color:var(--nuit);background:var(--lin);
+  border:1px solid var(--em-15);border-radius:var(--radius);
+  padding:11px 14px;
+  transition:border-color .3s var(--ease),box-shadow .3s var(--ease);
+}
+.field textarea{resize:vertical;min-height:112px;line-height:1.7}
+.field select{
+  appearance:none;-webkit-appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,var(--sauge) 50%),linear-gradient(135deg,var(--sauge) 50%,transparent 50%);
+  background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat;
+  padding-right:38px;
+}
+.field input::placeholder,.field textarea::placeholder{color:var(--sauge);opacity:.75}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--emeraude);box-shadow:0 0 0 3px var(--em-08);
+}
+.form__row{display:grid;grid-template-columns:1fr;gap:14px}
+.form__status{
+  font-size:13px;line-height:1.7;color:var(--emeraude);min-height:1px;
+}
+.form__legal{font-size:11px;line-height:1.7;color:var(--sauge)}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--nuit);border-top:1px solid var(--or-20);padding:56px 0 40px}
+.footer__logo{display:inline-flex;align-items:baseline;line-height:1;margin-bottom:18px}
+.footer__logo .a{font-family:var(--display);font-style:italic;font-weight:500;font-size:24px;color:var(--ivoire)}
+.footer__logo .b{font-family:var(--display);font-weight:500;font-size:24px;color:var(--emeraude);padding-left:6px}
+.footer p{font-weight:300;font-size:13px;line-height:1.9;color:var(--sauge)}
+.footer__bottom{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
+  margin-top:30px;padding-top:22px;border-top:1px solid var(--voile-08);
+}
+.footer__bottom p{font-size:12px}
+.footer__bottom .credit{font-size:11px;letter-spacing:.04em}
+.footer a{color:var(--sauge);transition:color .3s var(--ease)}
+.footer a:hover{color:var(--ivoire)}
+
+/* ===== BREAKPOINTS ===== */
+@media (min-width:480px){
+  :root{--gutter:28px}
+  .figures{grid-template-columns:repeat(3,1fr)}
+  .form__row{grid-template-columns:1fr 1fr}
+}
+
+@media (min-width:768px){
+  :root{--gutter:36px}
+  html{scroll-padding-top:92px}
+  .hero{padding:150px 0 100px}
+  .lede{font-size:17px}
+  .aides{grid-template-columns:repeat(3,1fr);gap:20px}
+  .quotes{grid-template-columns:repeat(3,1fr);gap:20px}
+  .gallery{grid-template-columns:repeat(6,1fr)}
+  .shot:nth-child(-n+3){grid-column:span 2}
+  .shot:nth-child(n+4){grid-column:span 3}
+  .contact__grid{grid-template-columns:1fr;gap:48px}
+  .footer{padding:68px 0 44px}
+}
+
+@media (min-width:1024px){
+  :root{--gutter:40px}
+  .header__inner{height:82px}
+  .nav{display:flex}
+  .header__cta{display:inline-flex}
+  .burger{display:none}
+  .mnav{display:none}
+
+  .hero{padding:140px 0 110px}
+  .hero__inner{max-width:760px}
+
+  /* offre : 3 colonnes aérées séparées par des filets fins */
+  .pillars{grid-template-columns:repeat(3,1fr);gap:0;margin-top:64px}
+  .pillar{padding:0 44px;border-bottom:0;border-right:1px solid var(--em-10)}
+  .pillar:first-child{padding-top:0;padding-left:0}
+  .pillar:last-child{border-right:0;padding-right:0;padding-bottom:0}
+
+  /* processus : 4 colonnes reliées par un pointillé */
+  .steps{grid-template-columns:repeat(4,1fr);gap:40px;margin-top:64px}
+  .step{padding:52px 0 0}
+  .step__num{top:0;left:0}
+  .step::before{
+    content:'';left:56px;right:-40px;top:18px;bottom:auto;
+    border-left:0;border-top:1px dashed var(--em-20);
+  }
+  .step:last-child::before{display:none}
+
+  .contact__grid{grid-template-columns:0.85fr 1.15fr;gap:56px}
+  .why__text{font-size:17px}
+}
+
+@media (min-width:1280px){
+  :root{--gutter:48px}
+  .pillar{padding:0 56px}
+  .steps{gap:48px}
+  .step::before{right:-48px}
+}
+
+/* ===== ACCESSIBILITÉ / MOUVEMENT RÉDUIT ===== */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{
+    animation-duration:.001ms;animation-iteration-count:1;
+    transition-duration:.001ms;scroll-behavior:auto;
+  }
+}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+.skip{
+  position:absolute;left:var(--gutter);top:-60px;z-index:80;
+  background:var(--emeraude);color:var(--ivoire);
+  padding:10px 18px;border-radius:var(--radius);font-size:13px;
+  transition:top .3s var(--ease);
+}
+.skip:focus{top:12px}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Aller au contenu</a>
+
+<!-- ===== DÉFINITION DU MOTIF D'ISOTHERMIE ===== -->
+<svg class="iso-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="isothermes" x="0" y="0" width="400" height="200" patternUnits="userSpaceOnUse">
+      <g class="iso-lines">
+        <path d="M0 10 C 50 6, 150 14, 200 10 C 250 6, 350 14, 400 10"/>
+        <path d="M0 30 C 55 36, 145 24, 200 30 C 255 36, 345 24, 400 30"/>
+        <path d="M0 60 C 45 55, 155 65, 200 60 C 245 55, 355 65, 400 60"/>
+        <path d="M0 105 C 60 111, 140 99, 200 105 C 260 111, 340 99, 400 105"/>
+        <path d="M0 133 C 50 128, 150 138, 200 133 C 250 128, 350 138, 400 133"/>
+        <path d="M0 168 C 65 174, 135 162, 200 168 C 265 174, 335 162, 400 168"/>
+        <path d="M0 190 C 48 185, 152 195, 200 190 C 248 185, 352 195, 400 190"/>
+      </g>
+    </pattern>
+  </defs>
+</svg>
+
+<!-- ===== HEADER FIXE ===== -->
+<header class="header" id="header">
+  <div class="wrap header__inner">
+    <a class="logo" href="#top" aria-label="Détente &amp; Confort — retour en haut">
+      <span class="logo__a">Détente</span><span class="logo__amp">&amp;</span><span class="logo__b">Confort</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#offre">Notre offre</a>
+      <a href="#processus">Comment ça marche</a>
+      <a href="#aides">Aides &amp; financement</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="btn btn--primary btn--sm header__cta" href="#contact">Prendre rendez-vous</a>
+
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- overlay mobile -->
+<div class="mnav" id="mnav" hidden>
+  <a href="#offre">Notre offre</a>
+  <a href="#processus">Comment ça marche</a>
+  <a href="#aides">Aides &amp; financement</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn--primary" href="#contact">Prendre rendez-vous</a>
+</div>
+
+<main id="main">
+  <span id="top"></span>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <svg class="iso" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#isothermes)"/></svg>
+    <div class="wrap">
+      <div class="hero__inner">
+        <p class="hero__eyebrow reveal">Pompes à chaleur · Photovoltaïque · Clé en main · PACA</p>
+        <h1 class="reveal">Votre logement, confortable <em>et économe en énergie.</em></h1>
+        <hr class="rule-or reveal">
+        <p class="hero__sub reveal">
+          Détente &amp; Confort installe vos équipements énergétiques et coordonne l'ensemble
+          de votre rénovation — du bilan initial à la remise des clés. Un seul interlocuteur,
+          un résultat haut de gamme.
+        </p>
+        <div class="hero__ctas reveal">
+          <a class="btn btn--primary" href="#contact">Demander un bilan gratuit</a>
+          <a class="btn btn--ghost" href="#offre">Découvrir notre offre</a>
+        </div>
+        <p class="hero__tags reveal">
+          <span>Pompe à chaleur</span><span>Photovoltaïque</span><span>Rénovation clé en main</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOTRE OFFRE ===== -->
+  <section class="section bg-lin" id="offre" aria-labelledby="offre-t">
+    <svg class="iso" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#isothermes)"/></svg>
+    <div class="wrap">
+      <p class="eyebrow reveal">Notre offre</p>
+      <h2 class="h2 reveal" id="offre-t">Trois expertises, un seul prestataire.</h2>
+
+      <div class="pillars">
+        <article class="pillar reveal">
+          <span class="pillar__num" aria-hidden="true">01</span>
+          <h3>Pompe à chaleur</h3>
+          <p>
+            Installation complète air/air, air/eau ou géothermique. Dimensionnement sur mesure
+            selon votre logement, marques premium (Daikin, Atlantic, Mitsubishi), mise en service incluse.
+          </p>
+          <span class="pillar__label">RGE · Qualibat</span>
+        </article>
+
+        <article class="pillar reveal">
+          <span class="pillar__num" aria-hidden="true">02</span>
+          <h3>Photovoltaïque</h3>
+          <p>
+            Panneaux monocristallins haute performance. Production, autoconsommation, revente
+            du surplus. Suivi de production en temps réel. Rentabilité calculée avant installation.
+          </p>
+          <span class="pillar__label">RGE · Qualifelec</span>
+        </article>
+
+        <article class="pillar reveal">
+          <span class="pillar__num" aria-hidden="true">03</span>
+          <h3>Rénovation clé en main</h3>
+          <p>
+            Coordination complète des corps de métier. Isolation, second œuvre, électricité,
+            plomberie. Un seul interlocuteur du diagnostic initial à la remise des clés.
+          </p>
+          <span class="pillar__label">MOE · Clé en main</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMMENT ÇA MARCHE ===== -->
+  <section class="section" id="processus" aria-labelledby="proc-t">
+    <div class="wrap">
+      <p class="eyebrow reveal">Notre processus</p>
+      <h2 class="h2 reveal" id="proc-t">Du diagnostic à la remise des clés.</h2>
+
+      <div class="steps">
+        <article class="step reveal">
+          <span class="step__num" aria-hidden="true">01</span>
+          <h3>Bilan énergétique</h3>
+          <p>Audit complet du logement. Analyse thermique, consommations, potentiel solaire. Recommandations personnalisées et chiffrées.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step__num" aria-hidden="true">02</span>
+          <h3>Proposition sur mesure</h3>
+          <p>Équipements sélectionnés, économies projetées, aides disponibles. Devis détaillé et transparent.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step__num" aria-hidden="true">03</span>
+          <h3>Installation &amp; coordination</h3>
+          <p>Léone installe les équipements, coordonne les artisans partenaires. Vous n'avez rien à gérer.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step__num" aria-hidden="true">04</span>
+          <h3>Remise des clés</h3>
+          <p>Mise en service, formation à l'utilisation, garanties transmises. Votre logement est prêt.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AIDES & FINANCEMENT ===== -->
+  <section class="section bg-lin" id="aides" aria-labelledby="aides-t">
+    <svg class="iso" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#isothermes)"/></svg>
+    <div class="wrap">
+      <p class="eyebrow reveal">Aides &amp; financement</p>
+      <h2 class="h2 reveal" id="aides-t">Jusqu'à 70&nbsp;% de financement public disponible.</h2>
+      <p class="lede reveal">Détente &amp; Confort monte les dossiers à votre place.</p>
+
+      <div class="aides">
+        <article class="aide reveal">
+          <h3>MaPrimeRénov</h3>
+          <p>Aide de l'État pour les travaux de rénovation énergétique. Montant variable selon les revenus et les équipements.</p>
+        </article>
+        <article class="aide reveal">
+          <h3>CEE</h3>
+          <p>Certificats d'Économie d'Énergie. Prime versée par les fournisseurs d'énergie pour les travaux d'isolation et de chauffage.</p>
+        </article>
+        <article class="aide reveal">
+          <h3>TVA 5,5&nbsp;%</h3>
+          <p>Taux réduit applicable sur les travaux de rénovation énergétique dans les logements de plus de 2&nbsp;ans.</p>
+        </article>
+      </div>
+
+      <p class="aides__note reveal">Nous prenons en charge le montage et le suivi de tous vos dossiers d'aides.</p>
+    </div>
+  </section>
+
+  <!-- ===== POURQUOI DÉTENTE & CONFORT ===== -->
+  <section class="section bg-nuit" aria-labelledby="why-t">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--light reveal">Notre différence</p>
+      <h2 class="h2 h2--light h2--it why__title reveal" id="why-t">Un investissement, pas une dépense.</h2>
+      <p class="why__text reveal">
+        En PACA, un logement équipé d'une pompe à chaleur performante et de panneaux
+        photovoltaïques voit sa valeur immobilière augmenter de 5 à 15&nbsp;%. Les factures
+        d'énergie chutent. Le confort monte. Détente &amp; Confort positionne la rénovation
+        énergétique comme ce qu'elle est vraiment — un investissement patrimonial rentable,
+        pas une contrainte réglementaire à subir.
+      </p>
+
+      <div class="figures">
+        <div class="figure reveal">
+          <span class="figure__n">5–15&nbsp;%</span>
+          <span class="figure__l">de plus-value immobilière</span>
+        </div>
+        <div class="figure reveal">
+          <span class="figure__n">70&nbsp;%</span>
+          <span class="figure__l">de réduction de facture d'énergie en moyenne</span>
+        </div>
+        <div class="figure reveal">
+          <span class="figure__n">1</span>
+          <span class="figure__l">seul interlocuteur du début à la fin</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RÉALISATIONS ===== -->
+  <section class="section" aria-labelledby="real-t">
+    <div class="wrap">
+      <p class="eyebrow reveal">Réalisations</p>
+      <h2 class="h2 h2--it reveal" id="real-t">Des logements transformés en PACA.</h2>
+
+      <!-- TODO client : remplacer chaque placeholder par une <img> de chantier
+           (ratio 4:3, ~1200x900px, format .webp de préférence). -->
+      <div class="gallery">
+        <figure class="shot reveal" tabindex="0">
+          <figcaption class="shot__cap">Villa rénovée — Var (83) · PAC + PV + rénovation complète</figcaption>
+          <div class="shot__over" aria-hidden="true"><span>Villa rénovée — Var (83)<br>PAC + PV + rénovation complète</span></div>
+        </figure>
+        <figure class="shot reveal" tabindex="0">
+          <figcaption class="shot__cap">Maison de caractère — Alpes-Maritimes · Pompe à chaleur</figcaption>
+          <div class="shot__over" aria-hidden="true"><span>Maison de caractère — Alpes-Maritimes<br>Pompe à chaleur</span></div>
+        </figure>
+        <figure class="shot reveal" tabindex="0">
+          <figcaption class="shot__cap">Appartement standing — Aix-en-Provence · Photovoltaïque</figcaption>
+          <div class="shot__over" aria-hidden="true"><span>Appartement standing — Aix-en-Provence<br>Photovoltaïque</span></div>
+        </figure>
+        <figure class="shot reveal" tabindex="0">
+          <figcaption class="shot__cap">Bastide provençale — PACA · Rénovation clé en main</figcaption>
+          <div class="shot__over" aria-hidden="true"><span>Bastide provençale — PACA<br>Rénovation clé en main</span></div>
+        </figure>
+        <figure class="shot reveal" tabindex="0">
+          <figcaption class="shot__cap">Résidence secondaire · PAC + isolation + second œuvre</figcaption>
+          <div class="shot__over" aria-hidden="true"><span>Résidence secondaire<br>PAC + isolation + second œuvre</span></div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TÉMOIGNAGES ===== -->
+  <section class="section bg-lin" aria-labelledby="temo-t">
+    <svg class="iso" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#isothermes)"/></svg>
+    <div class="wrap">
+      <p class="eyebrow reveal">Témoignages</p>
+      <h2 class="h2 reveal" id="temo-t">Ils nous ont fait confiance.</h2>
+
+      <div class="quotes">
+        <figure class="quote reveal">
+          <p>« Léone a géré l'intégralité de notre rénovation — PAC, panneaux solaires, isolation et peinture. Nous n'avons eu à nous occuper de rien. Notre facture d'énergie a été divisée par quatre. Un service hors du commun. »</p>
+          <footer>
+            <cite>Famille Bertrand, villa · Var (83)</cite>
+            <span class="stars" aria-label="Note : 5 sur 5">★★★★★</span>
+          </footer>
+        </figure>
+
+        <figure class="quote reveal">
+          <p>« Nous avions une résidence secondaire énergivore dans les Alpes-Maritimes. Détente &amp; Confort a transformé la situation en quelques semaines. Le dossier MaPrimeRénov était monté et suivi sans qu'on ait à intervenir. »</p>
+          <footer>
+            <cite>Marc et Sophie D., Alpes-Maritimes</cite>
+            <span class="stars" aria-label="Note : 5 sur 5">★★★★★</span>
+          </footer>
+        </figure>
+
+        <figure class="quote reveal">
+          <p>« Une approche très professionnelle, un interlocuteur unique, et un résultat qui dépasse nos attentes. Notre bastide est maintenant autonome en énergie à 80&nbsp;%. Nous recommandons vivement. »</p>
+          <footer>
+            <cite>Pierre L., bastide · Bouches-du-Rhône</cite>
+            <span class="stars" aria-label="Note : 5 sur 5">★★★★★</span>
+          </footer>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact" aria-labelledby="contact-t">
+    <svg class="iso" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#isothermes)"/></svg>
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow reveal">Contact</p>
+        <h2 class="h2 h2--it reveal" id="contact-t">Commençons par un bilan gratuit.</h2>
+        <p class="lede reveal">Sans engagement · PACA · Réponse sous 24&nbsp;h</p>
+      </div>
+
+      <div class="contact__grid">
+        <!-- Bloc gauche : informations -->
+        <div class="card-id reveal">
+          <p class="card-id__name">Léone Morabito</p>
+          <p class="card-id__brand">Détente &amp; Confort</p>
+          <p>
+            Installateur RGE · PACA<br>
+            Pompe à chaleur · Photovoltaïque · Clé en main
+          </p>
+          <hr>
+          <p>
+            <!-- TODO client : remplacer par le téléphone et l'e-mail réels. -->
+            <a href="tel:+33600000000">06&nbsp;XX&nbsp;XX&nbsp;XX&nbsp;XX</a><br>
+            <a href="mailto:contact@detente-confort.fr">contact@detente-confort.fr</a>
+          </p>
+          <hr>
+          <p>Bilan énergétique gratuit · Déplacement sur site · Sans engagement</p>
+        </div>
+
+        <!-- Bloc droit : formulaire -->
+        <!-- TODO client : brancher le formulaire (Web3Forms / Formspree) en
+             remplaçant action="#" par l'endpoint fourni, puis supprimer le
+             gestionnaire submit du script en bas de page. -->
+        <form class="form reveal" id="contact-form" action="#" method="post" novalidate>
+          <div class="form__row">
+            <div class="field">
+              <label for="f-nom">Prénom &amp; nom</label>
+              <input id="f-nom" name="nom" type="text" autocomplete="name" required placeholder="Léone Morabito">
+            </div>
+            <div class="field">
+              <label for="f-tel">Téléphone</label>
+              <input id="f-tel" name="telephone" type="tel" autocomplete="tel" required placeholder="06 12 34 56 78">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-mail">Email</label>
+            <input id="f-mail" name="email" type="email" autocomplete="email" required placeholder="vous@exemple.fr">
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="f-logement">Type de logement</label>
+              <select id="f-logement" name="logement" required>
+                <option value="" selected>Sélectionnez…</option>
+                <option>Villa</option>
+                <option>Maison de caractère</option>
+                <option>Appartement de standing</option>
+                <option>Bastide</option>
+                <option>Résidence secondaire</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-projet">Projet</label>
+              <select id="f-projet" name="projet" required>
+                <option value="" selected>Sélectionnez…</option>
+                <option>Pompe à chaleur</option>
+                <option>Photovoltaïque</option>
+                <option>Pompe à chaleur + Photovoltaïque</option>
+                <option>Rénovation complète clé en main</option>
+                <option>Bilan énergétique d'abord</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-surface">Superficie approximative</label>
+            <input id="f-surface" name="superficie" type="text" placeholder="ex : 180m²">
+          </div>
+
+          <div class="field">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" name="message" placeholder="Décrivez votre logement et vos objectifs…"></textarea>
+          </div>
+
+          <button class="btn btn--primary btn--full" type="submit">Demander mon bilan gratuit</button>
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="form__legal">Vos informations servent uniquement à préparer votre bilan énergétique. Aucune transmission à des tiers.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <a class="footer__logo" href="#top" aria-label="Détente &amp; Confort — retour en haut">
+      <span class="a">Détente</span><span class="b">&amp; Confort</span>
+    </a>
+    <p>Léone Morabito · Pompes à chaleur · Photovoltaïque · Rénovation clé en main · PACA</p>
+    <p>Var (83) · Alpes-Maritimes (06) · Bouches-du-Rhône (13)</p>
+    <div class="footer__bottom">
+      <p>© 2026 Détente &amp; Confort — Tous droits réservés</p>
+      <p class="credit">Site réalisé par Payment Flow</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+'use strict';
+(function () {
+  var doc = document;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* ===== HEADER AU SCROLL ===== */
+  var header = doc.getElementById('header');
+  var ticking = false;
+
+  function onScroll() {
+    if (window.scrollY > 80) header.classList.add('is-stuck');
+    else header.classList.remove('is-stuck');
+    spy();
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(onScroll); }
+  }, { passive: true });
+
+  /* ===== SCROLLSPY ===== */
+  var links = Array.prototype.slice.call(doc.querySelectorAll('#nav a[href^="#"]'));
+  var targets = links
+    .map(function (a) { return doc.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  function spy() {
+    var line = window.scrollY + window.innerHeight * 0.32;
+    var current = -1;
+    for (var i = 0; i < targets.length; i++) {
+      if (targets[i].offsetTop <= line) current = i;
+    }
+    links.forEach(function (a, i) { a.classList.toggle('is-active', i === current); });
+  }
+
+  /* ===== MENU MOBILE ===== */
+  var burger = doc.getElementById('burger');
+  var mnav = doc.getElementById('mnav');
+  mnav.hidden = false;
+
+  function setMenu(open) {
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    mnav.classList.toggle('is-open', open);
+    doc.body.classList.toggle('is-locked', open);
+  }
+  burger.addEventListener('click', function () {
+    setMenu(burger.getAttribute('aria-expanded') !== 'true');
+  });
+  mnav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setMenu(false);
+  });
+  doc.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') {
+      setMenu(false);
+      burger.focus();
+    }
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 1024) setMenu(false);
+  });
+
+  /* ===== SCROLL REVEAL (stagger 0.12s par groupe) ===== */
+  var reveals = Array.prototype.slice.call(doc.querySelectorAll('.reveal'));
+
+  if (reduce.matches || !('IntersectionObserver' in window)) {
+    reveals.forEach(function (el) { el.classList.add('revealed'); });
+  } else {
+    var groups = new Map();
+    reveals.forEach(function (el) {
+      var parent = el.parentNode;
+      var idx = groups.get(parent) || 0;
+      el.style.transitionDelay = (idx * 0.12).toFixed(2) + 's';
+      groups.set(parent, idx + 1);
+    });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('revealed');
+        io.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+    reveals.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ===== SMOOTH SCROLL (fallback pour les anciens navigateurs) ===== */
+  doc.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    var id = link.getAttribute('href');
+    if (id === '#' || id.length < 2) return;
+    var target = doc.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    var top = target.getBoundingClientRect().top + window.scrollY - (window.innerWidth >= 768 ? 92 : 84);
+    window.scrollTo({ top: top, behavior: reduce.matches ? 'auto' : 'smooth' });
+  });
+
+  /* ===== FORMULAIRE (placeholder — à remplacer par l'endpoint réel) ===== */
+  var form = doc.getElementById('contact-form');
+  var status = doc.getElementById('form-status');
+
+  form.addEventListener('submit', function (e) {
+    if (form.getAttribute('action') !== '#') return; /* endpoint réel branché : on laisse passer */
+    e.preventDefault();
+
+    var missing = Array.prototype.slice.call(form.querySelectorAll('[required]'))
+      .filter(function (f) { return !f.value.trim(); });
+
+    if (missing.length) {
+      status.textContent = 'Merci de renseigner votre nom, votre téléphone, votre email et votre projet.';
+      missing[0].focus();
+      return;
+    }
+    status.textContent = 'Formulaire non connecté : ajoutez votre endpoint Web3Forms ou Formspree dans l\'attribut action.';
+  });
+
+  /* état initial */
+  onScroll();
+})();
+</script>
+</body>
+</html>
