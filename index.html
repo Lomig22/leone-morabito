@@ -27,7 +27,11 @@
 
   /* dérivés transparents (aucune couleur en dur hors de ce bloc) */
   --ivoire-97:rgba(250,250,247,.97);
+  --ivoire-88:rgba(250,250,247,.88);
   --ivoire-70:rgba(250,250,247,.70);
+  --ivoire-58:rgba(250,250,247,.58);
+  --ivoire-44:rgba(250,250,247,.44);
+  --ivoire-32:rgba(250,250,247,.32);
   --ivoire-40:rgba(250,250,247,.40);
   --ivoire-12:rgba(250,250,247,.12);
   --voile-04:rgba(255,255,255,.04);
@@ -193,7 +197,7 @@ ul{margin:0;padding:0;list-style:none}
 body.is-locked{overflow:hidden}
 
 /* ===== HERO ===== */
-.hero{padding:130px 0 80px;position:relative;overflow:hidden}
+.hero{padding:130px 0 0;position:relative;overflow:hidden}
 .hero__inner{max-width:760px;margin:0 auto;text-align:center}
 .hero__eyebrow{
   font-family:var(--sans);font-weight:600;font-size:11px;color:var(--emeraude);
@@ -214,6 +218,35 @@ body.is-locked{overflow:hidden}
   margin-top:32px;font-size:12px;color:var(--sauge);
 }
 .hero__tags span:not(:last-child)::after{content:'·';margin-left:10px;color:var(--or);opacity:.6}
+
+/* ===== HERO — BANDEAU PHOTO (backdrop discret) =====
+   Le héro reste ivoire et aéré : la photo n'est qu'un ancrage d'ambiance en
+   pied de section, désaturée et voilée d'ivoire. Elle n'affleure jamais à plus
+   de ~56 % — le registre reste « cabinet », pas « agence immobilière ». */
+.hero__media{
+  position:relative;z-index:1;
+  margin-top:clamp(48px,7vw,80px);
+  height:clamp(150px,26vw,300px);
+  overflow:hidden;
+}
+.hero__media img{
+  width:100%;height:100%;object-fit:cover;object-position:50% 64%;
+  filter:saturate(.62) contrast(.96) brightness(1.02);
+}
+/* voile ivoire dégradé — la photo émerge sans jamais rompre la page */
+.hero__media::after{
+  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(to bottom,
+    var(--ivoire) 0%,
+    var(--ivoire-88) 16%,
+    var(--ivoire-58) 46%,
+    var(--ivoire-32) 100%);
+}
+/* liseré or à la jonction avec la section suivante */
+.hero__media::before{
+  content:'';position:absolute;left:0;right:0;bottom:0;height:1px;z-index:2;
+  background:var(--or);opacity:.25;
+}
 
 /* ===== 3 PILIERS ===== */
 .pillars{display:grid;grid-template-columns:1fr;gap:0;margin-top:52px}
@@ -396,7 +429,8 @@ body.is-locked{overflow:hidden}
 @media (min-width:768px){
   :root{--gutter:36px}
   html{scroll-padding-top:92px}
-  .hero{padding:150px 0 100px}
+  .hero{padding:150px 0 0}
+  .hero__media img{object-position:50% 82%}
   .lede{font-size:17px}
   .aides{grid-template-columns:repeat(3,1fr);gap:20px}
   .quotes{grid-template-columns:repeat(3,1fr);gap:20px}
@@ -415,7 +449,7 @@ body.is-locked{overflow:hidden}
   .burger{display:none}
   .mnav{display:none}
 
-  .hero{padding:140px 0 110px}
+  .hero{padding:140px 0 0}
   .hero__inner{max-width:760px}
 
   /* offre : 3 colonnes aérées séparées par des filets fins */
@@ -543,6 +577,21 @@ body.is-locked{overflow:hidden}
           <span>Pompe à chaleur</span><span>Photovoltaïque</span><span>Rénovation clé en main</span>
         </p>
       </div>
+    </div>
+
+    <!-- Bandeau photo pleine largeur — hors .wrap pour le full-bleed.
+         Photo : Chelaxy Designs / Unsplash (Unsplash License — libre d'usage
+         commercial, attribution non requise mais appréciée).
+         TODO client : remplacer par une photo de chantier réelle dès que
+         disponible. Conserver les 3 formats (1920 / 1200 / mobile 2:1). -->
+    <div class="hero__media reveal">
+      <picture>
+        <source media="(min-width:768px)"
+                srcset="assets/hero-1200.jpg 1200w, assets/hero-1920.jpg 1920w"
+                sizes="100vw">
+        <img src="assets/hero-mobile.jpg" alt="" aria-hidden="true"
+             width="900" height="450" decoding="async" fetchpriority="low">
+      </picture>
     </div>
   </section>
 
